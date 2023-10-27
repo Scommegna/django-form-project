@@ -21,6 +21,8 @@ def contato(request):
             
             data = Contato(nome=nome, email=email, assunto=assunto, mensagem=mensagem)
             
+            form.send_mail()
+            
             data.save()
             
             messages.success(request, 'Enviado com sucesso!')
