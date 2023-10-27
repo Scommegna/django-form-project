@@ -44,7 +44,7 @@ def produto(request):
         form = ProdutoModelForm(request.POST, request.FILES)
         
         if form.is_valid():
-            prod = form.save(commit=False)
+            form.save()
             
             messages.success(request, 'Produto salvo com sucesso.')
             
